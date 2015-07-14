@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Together</title>
+<style>
+body {
+	font-family: Arial;
+	font-size: 22px;
+	text-align: center;
+	background-color: white;
+	margin: 0px;
+	padding: 0px;
+}
+
+@keyframes show
+{
+from {opacity: 0;}
+to {opacity: 1;}
+}
+
+@-moz-keyframes show
+{
+from {opacity: 0;}
+to {opacity: 1;}
+}
+
+@-webkit-keyframes show
+{
+from {opacity: 0;}
+to {opacity: 1;}
+}
+
+#action {
+	font-size: 30px;
+	opacity: 0;
+	animation: show 2s linear 1s 1 alternate;
+	animation-fill-mode: forwards;
+	-moz-animation: show 2s linear 1s 1 alternate;
+	-moz-animation-fill-mode: forwards;
+	-webkit-animation: show 2s linear 1s 1 alternate;
+	-webkit-animation-fill-mode: forwards;
+}
+
+#picture {
+	opacity: 0;
+	animation: show 2s linear 3s 1 alternate;
+	animation-fill-mode: forwards;
+	-moz-animation: show 2s linear 3s 1 alternate;
+	-moz-animation-fill-mode: forwards;
+	-webkit-animation: show 2s linear 3s 1 alternate;
+	-webkit-animation-fill-mode: forwards;
+}
+
+#license {
+	font-size: 14px;
+	color: lightgrey;
+}
+
+a {
+	text-decoration: none;
+	color: lightgrey;
+}
+</style>
+<script>
+// Seedable random number generator by David Bau: http://davidbau.com/seedrandom
+(function(j,i,g,m,k,n,o){function q(b){var e,f,a=this,c=b.length,d=0,h=a.i=a.j=a.m=0;a.S=[];a.c=[];for(c||(b=[c++]);d<g;)a.S[d]=d++;for(d=0;d<g;d++)e=a.S[d],h=h+e+b[d%c]&g-1,f=a.S[h],a.S[d]=f,a.S[h]=e;a.g=function(b){var c=a.S,d=a.i+1&g-1,e=c[d],f=a.j+e&g-1,h=c[f];c[d]=h;c[f]=e;for(var i=c[e+h&g-1];--b;)d=d+1&g-1,e=c[d],f=f+e&g-1,h=c[f],c[d]=h,c[f]=e,i=i*g+c[e+h&g-1];a.i=d;a.j=f;return i};a.g(g)}function p(b,e,f,a,c){f=[];c=typeof b;if(e&&c=="object")for(a in b)if(a.indexOf("S")<5)try{f.push(p(b[a],e-1))}catch(d){}return f.length?f:b+(c!="string"?"\0":"")}function l(b,e,f,a){b+="";for(a=f=0;a<b.length;a++){var c=e,d=a&g-1,h=(f^=e[a&g-1]*19)+b.charCodeAt(a);c[d]=h&g-1}b="";for(a in e)b+=String.fromCharCode(e[a]);return b}i.seedrandom=function(b,e){var f=[],a;b=l(p(e?[b,j]:arguments.length?b:[(new Date).getTime(),j,window],3),f);a=new q(f);l(a.S,j);i.random=function(){for(var c=a.g(m),d=o,b=0;c<k;)c=(c+b)*g,d*=g,b=a.g(1);for(;c>=n;)c/=2,d/=2,b>>>=1;return(c+b)/d};return b};o=i.pow(g,m);k=i.pow(2,k);n=k*2;l(i.random(),j)})([],Math,256,6,52);
+
+// Hey, wait! What are you looking for? Ok you found them. But be patient please.
+var picturesInfo = [
+	{
+		action: 'eating',
+		pictures: [
+			'https://lh5.googleusercontent.com/-G65jkaP2PcE/TuvEkvcD4gI/AAAAAAAADRY/joJ0M0PoSmo/s640/Repas.jpg',
+			'https://lh3.googleusercontent.com/-ld2FBNCPPz0/TNsoLXu2FGI/AAAAAAAAATg/F-VWiMWxUg8/s640/Sandra.jpg',
+			'https://lh3.googleusercontent.com/-54D7bE85zDw/TNsoHV1myFI/AAAAAAAAATg/km6jVb_B8D8/s640/Mickael%2520Tobias.jpg',
+			'https://lh6.googleusercontent.com/-Syt4oImXnUE/TNsebW-lRhI/AAAAAAAAAT0/0Rfd00CVM4s/s640/Schw%25C3%25A4bische%2520K%25C3%25BCche.jpg',
+			'https://lh6.googleusercontent.com/-kOKUwR8-QH0/TYuW_4fDM2I/AAAAAAAAAmk/vshu-mfWkA8/s640/Nos%2520propres%2520Kottbular.jpg',
+			'https://lh4.googleusercontent.com/-I6VhxDx-SD4/TjfoVtpy8CI/AAAAAAAABP8/G1XQvGXRca0/s640/Burgers.jpg',
+			'https://lh6.googleusercontent.com/-YdFqZCsh4uM/TqQe5LUZ5cI/AAAAAAAACco/YpfFHbfcqjQ/s640/Soiree_3.jpg'
+		]
+	},
+	{
+		action: 'playing',
+		pictures: [
+			'https://lh6.googleusercontent.com/-2Y1JGylVAOM/TNsmdrCkVMI/AAAAAAAAATk/4S7JBQPdIXU/s640/Cluji.jpg',
+			'https://lh5.googleusercontent.com/--Ma-mmwf408/TNsmfsrXCiI/AAAAAAAAATk/jzZqE0UWsgk/s640/Bandas%25201.jpg',
+			'https://lh3.googleusercontent.com/-sMA9wFzwfo0/TNsmqBtLcBI/AAAAAAAAATk/g5IKs1j1YCY/s640/Bvr%25202.jpg',
+			'https://lh6.googleusercontent.com/-sY5a_JkCg0E/TNsmsZ_91MI/AAAAAAAAATk/F-yXKzdTh1k/s640/Impro%25203.jpg',
+			'https://lh5.googleusercontent.com/-JFvLATYw9bg/TNsmwgSnuNI/AAAAAAAAATk/Ru3YKZ6UfAM/s640/Echecs%25202.jpg',
+			'https://lh6.googleusercontent.com/-HiIZdePQOZc/TNsm7UF9l5I/AAAAAAAAATk/RwUhG5SdNOU/s640/Sumo%25203.jpg',
+			'https://lh3.googleusercontent.com/-N-Haotp3Su4/TfVT1Xk4n8I/AAAAAAAAA8Q/D7fK9XRcXuc/s640/Banana.jpg',
+			'https://lh4.googleusercontent.com/-UxITSDWlhIE/TlEKKJGe2fI/AAAAAAAAB-4/JcaVPJNAH-Q/s640/Paul_2.jpg',
+			'https://lh5.googleusercontent.com/-lp6fBOUK0Wo/TlEPU3NM-QI/AAAAAAAABjw/CxA6pfOYDQ0/s640/SF%2520manettes.jpg',
+			'https://lh3.googleusercontent.com/-uHY-t5Cumjs/TNsnOYRiDUI/AAAAAAAAATk/RLpldTFDHtc/s640/Ragda%252021.jpg',
+			'https://lh6.googleusercontent.com/-cUd2pend46w/TNsnP5FXWRI/AAAAAAAAATk/CdHyctiSPW8/s640/Ragda%252024.jpg',
+			'https://lh6.googleusercontent.com/-Hemdo1cz7k0/TaS_xTqYGOI/AAAAAAAAAvk/Co2SLLVIGWU/s640/Atem.jpg',
+			'https://lh4.googleusercontent.com/-QziYorOvg_c/TNsoDB2srnI/AAAAAAAAATg/sKx5fCOZTCg/s640/Schach.jpg',
+			'https://lh4.googleusercontent.com/-a3-VKP3-Obg/TNsnAU9XmmI/AAAAAAAAATk/Ihuwq-bzs3Q/s640/Club%2520Rock%25208.jpg',
+			'https://lh5.googleusercontent.com/-m0uGuFwz0ow/TNsm9n6XmsI/AAAAAAAAATk/0VsoYnj2HTk/s640/Club%2520Rock%25201.jpg'
+		]
+	},
+	{
+		action: 'watching',
+		pictures: [
+			'https://lh5.googleusercontent.com/-_L8oy6CdJ5U/TNsmzAyd6nI/AAAAAAAAATk/hvU17MkzTLA/s640/Ranger%25201.JPG',
+			'https://lh3.googleusercontent.com/-Pdm6BzZNLWI/TYuW7rjRt9I/AAAAAAAAAlw/EuqzeAompb0/s640/Aquarium.jpg',
+			'https://lh3.googleusercontent.com/-zcoQNbnJm-0/Tb2UXbI0JOI/AAAAAAAAAz0/vMZIgV3HPP8/s640/Berger.jpg',
+			'https://lh6.googleusercontent.com/-uOjLqmIemIc/TfVT9UtXEBI/AAAAAAAAA9Y/LwIjgKllkYU/s640/Maxime%2520chanteurs.jpg',
+			'https://lh4.googleusercontent.com/-8mKq9N16IWo/TlEiUD66JMI/AAAAAAAABo0/tSTTU1KJ6QY/s640/Concerts_10.jpg',
+			'https://lh5.googleusercontent.com/-WaurtXAAEvg/TNsglB1BdbI/AAAAAAAAATo/YjxGyTvQJP8/s640/Enfant%2520aux%2520cygnes.jpg'
+		]
+	},
+	{
+		action: 'moving',
+		pictures: [
+			'https://lh5.googleusercontent.com/-dNb2kunPMTY/TNsmhvFXSKI/AAAAAAAAATk/ElTiuIx9HuA/s640/Velo%25202.jpg',
+			'https://lh4.googleusercontent.com/-I-UP9E9XSNg/TNsmiPo0DgI/AAAAAAAAATk/zQGUxDmMZAQ/s640/Velo%25203.jpg',
+			'https://lh3.googleusercontent.com/-bbsXwQNJUQE/TNsrd3LYPTI/AAAAAAAAAWQ/pDnmRKytXLA/s640/Lac%2520de%2520Roselend.jpg',
+			'https://lh5.googleusercontent.com/-hqA8m2Uj3qY/TZn5sVQ-u7I/AAAAAAAAArI/aJxmsg7D6Z4/s640/Vue%2520des%2520Saisies.jpg',
+			'https://lh5.googleusercontent.com/-p1zBRbXOCOY/TNseangzcII/AAAAAAAAAT0/EeGOXsyQu7k/s640/Zu%2520sehende%2520Reiher.jpg',
+			'https://lh5.googleusercontent.com/-EPQ-B6MIHBs/TfVTso0ZT9I/AAAAAAAAA6w/WPts_VDb5Sg/s640/Split%25208.jpg',
+			'https://lh5.googleusercontent.com/-1zzxQM3NWsg/TfVT4GA3GGI/AAAAAAAAA8w/wVROYEb3RXU/s640/Bol.jpg',
+			'https://lh6.googleusercontent.com/-OUaj_dZm5Bs/TlC8prl7zxI/AAAAAAAABYY/wdazdIovDIk/s640/Train%2520en%2520gare.jpg',
+			'https://lh5.googleusercontent.com/-TE5S5EOBO_c/TlDivukKvMI/AAAAAAAABeQ/xqnNcOQ8wy8/s640/Champ.jpg',
+			'https://lh5.googleusercontent.com/-538yRdAQAtk/TpcaZxly4pI/AAAAAAAACgU/iB2CRgX6bfY/s640/Tourbiere.jpg',
+			'https://lh4.googleusercontent.com/-X9zBuFw-l8Y/TpcfKd6juhI/AAAAAAAAChQ/5f--s0fMQN0/s640/Auvergne%25202.jpg',
+			'https://lh6.googleusercontent.com/-2ACU6h6st4o/TpcLFW757rI/AAAAAAAACe4/X1g53YUu-3E/s640/Tentes.jpg',
+			'https://lh6.googleusercontent.com/-JkYzigmc9vk/TYubM1pDS3I/AAAAAAAABJE/8PSoHv44H7E/s640/Mathieu%2520Dragos%2520und%2520ich%25202.jpg'
+		]
+	},
+	{
+		action: 'creating',
+		pictures: [
+			'https://lh3.googleusercontent.com/-GcMzMTngYfg/TNsmkAIXc8I/AAAAAAAAATk/zFbxCU24i28/s640/Cra%25201.jpg',
+			'https://lh4.googleusercontent.com/-VR4v1ty7uB8/TNsmorTqDhI/AAAAAAAAATk/I99ETcHWurk/s640/Maquillage%25201.jpg',
+			'https://lh4.googleusercontent.com/-69mr0Z0A1ak/TNsncHugCCI/AAAAAAAAATk/7Zkc5Txldz0/s640/Cache%2520sur%2520scene.jpg',
+			'https://lh4.googleusercontent.com/-41oruDYOLB0/TYuW6SSDDYI/AAAAAAAAAlk/DU7HRk_vfVU/s640/Igloo.jpg',
+			'https://lh6.googleusercontent.com/-gLlCEmxPyTc/TlDOBsi3yVI/AAAAAAAABbA/0sLWb1kIiN0/s640/Evoke.jpg',
+			'https://lh5.googleusercontent.com/-6WXvIJ7Rbqs/TprtO_2v5EI/AAAAAAAAChY/6zITKK3xick/s640/Samedi%252021h.jpg',
+			'https://lh5.googleusercontent.com/-zAGDcpQETsg/TNsmi6r2zeI/AAAAAAAAATk/tVsDKR-x9_I/s640/Petite%2520scene%25201.jpg'
+		]
+	},
+	{
+		action: 'meeting',
+		pictures: [
+			'https://lh3.googleusercontent.com/-3heTxR0SPko/TNsmp35Un4I/AAAAAAAAATk/ACxBvnXwtP8/s640/Remi.jpg',
+			'https://lh6.googleusercontent.com/-aI6uGJhiqsQ/TNsgnSvRHWI/AAAAAAAAATs/znUcNySf-TQ/s640/Guillaume%2520Def.jpg',
+			'https://lh5.googleusercontent.com/-ZgdSFVB3-Pc/TNsgohj3fAI/AAAAAAAAATs/wu-zhkpO6Vg/s640/Famille.jpg',
+			'https://lh3.googleusercontent.com/-7GzIzgS-hPU/TNsgqjEJWBI/AAAAAAAAATs/XvDijAN1yzg/s640/Mathias%2520Pedro.jpg',
+			'https://lh5.googleusercontent.com/-pVXJAI-Bna8/TNsg5dWA41I/AAAAAAAAATs/9CI6sraAvoI/s640/Marjorie.jpg',
+			'https://lh6.googleusercontent.com/-I1-mbYQoTFY/TNsg6eVlTdI/AAAAAAAAATs/9KGTaE28Fe8/s640/Mathieu.jpg',
+			'https://lh3.googleusercontent.com/-CcicqVoIV5Q/TNsg7LnbiuI/AAAAAAAAATs/XtOdTURK-Ic/s640/Paul.jpg',
+			'https://lh3.googleusercontent.com/-3daD-61NT8g/TjfnqXHCwcI/AAAAAAAACW0/LDuxtsC9_ho/s640/Dragos%2520Andreea.jpg',
+			'https://lh4.googleusercontent.com/-cZSP75oGWfs/TNsgkL5EilI/AAAAAAAAATo/HTUew4BTXLs/s640/Sur%2520les%2520berges.jpg',
+			'https://lh6.googleusercontent.com/-Va455eCDiOE/TNsoJHhSifI/AAAAAAAAATg/upd8yR0nwgA/s640/Stuttgart%252021.jpg',
+			'https://lh3.googleusercontent.com/-N3i2i9zlC3c/TNsraP9jocI/AAAAAAAAAWM/8HI4gddsQD8/s640/Salle%2520detente.jpg',
+			'https://lh4.googleusercontent.com/-hiUt2WPLQTw/TYuW9Dao3RI/AAAAAAAAAmA/6mCn4WPKUy8/s640/Brice%2520et%2520Tanguy.jpg',
+			'https://lh4.googleusercontent.com/-3uLQl9-i4MM/TYuW-jYivII/AAAAAAAAAmU/Uumyyvl03P4/s640/Carte%2520postale.jpg',
+			'https://lh5.googleusercontent.com/-oaVDmnrGerc/TjfoCUX8ReI/AAAAAAAABOU/DaWA_yIWGFs/s640/Loic%2520terrasse.jpg',
+			'https://lh4.googleusercontent.com/-zQcUYkm4ets/TfVTl_5rN-I/AAAAAAAAA5w/IhdgiZBI3IM/s640/Remi%2520Elen%2520avion.jpg',
+			'https://lh5.googleusercontent.com/-HkuvuNEHZOM/TfVT_o3FpgI/AAAAAAAAA9w/KHsaba5T3yQ/s640/Choupi%2520bus%25202.jpg',
+			'https://lh4.googleusercontent.com/-w85qDEXf5MU/TlC-ai1h35I/AAAAAAAABYo/M1NJSxAqpTU/s640/Cadenas.jpg',
+			'https://lh3.googleusercontent.com/-gn7AJKsaBf8/TlDMDNOKBrI/AAAAAAAABao/c76BlreNMUc/s640/Anciens.jpg',
+			'https://lh4.googleusercontent.com/--lpbS5H7dBM/TrcbNOYUGnI/AAAAAAAACrA/Rt2_CnhNteI/s640/Team%25201.jpg',
+			'https://lh5.googleusercontent.com/-9tiPYES6JQI/TqQe_3OBBQI/AAAAAAAACdM/mNLx2J714SE/s640/Choupi_1.jpg',
+			'https://lh5.googleusercontent.com/-BNS6KFa0rOs/TlDXuyiBn4I/AAAAAAAABdA/D1dQF11-llg/s640/Dead%2520drop.jpg',
+			'https://lh4.googleusercontent.com/-07LtrtMakH0/Tj6w3ImJ0OI/AAAAAAAADwU/RaVl6iudELw/s640/Trio.jpg',
+			'https://lh3.googleusercontent.com/-TJeMAuBqJh8/TNsnpSgO9zI/AAAAAAAAATk/aHbzfUjoODo/s640/Pause%2520casse%2520croute.jpg'
+		]
+	}
+];
+
+var pictures = [];
+for (var i = 0; i < picturesInfo.length; ++i) {
+	var category = picturesInfo[i];
+	for (var j = 0; j < category.pictures.length; ++j) {
+		pictures.push({
+			action: category.action,
+			picture: category.pictures[j]
+		});
+	}
+}
+
+window.onload = function() {
+	var now = new Date();
+	Math.seedrandom(now.toDateString());
+	var picture = pictures[Math.floor(Math.random() * pictures.length)];
+	document.getElementById('action').innerHTML = picture.action + ' together?';
+	document.getElementById('picture').src = picture.picture;
+}
+</script>
+</head>
+<body>
+<p>What about...</p>
+<p id="action"></p>
+<div class="picture">
+<img id="picture" src="">
+</div>
+<p id="license">Code and pictures by Bloutiouf licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+</body>
+</html>
